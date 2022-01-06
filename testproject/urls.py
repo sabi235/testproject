@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from quickstart import views
+from movie.views import MovieViewSet
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
@@ -26,6 +27,8 @@ router.register(r'groups', views.GroupViewSet)
 router.register(r'basic', views.UserBasicViewSet)
 router.register(r'model', views.UserModelViewSet)
 router.register(r'hyperlinked', views.UserHyperlinkedViewSet)
+
+router.register(r'movies', MovieViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
