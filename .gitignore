@@ -1,0 +1,14 @@
+#
+#
+## virtualenv
+#venv/
+#ENV/
+#
+## Byte-compiled / optimized / DLL files
+#__pycache__/
+#*.pyc
+#__init__/
+#*.py[cod]
+#*$py.class
+#*.cpython-36.pyc
+
