@@ -22,6 +22,11 @@ router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
 
+# serializers types
+router.register(r'basic', views.UserBasicViewSet)
+router.register(r'model', views.UserModelViewSet)
+router.register(r'hyperlinked', views.UserHyperlinkedViewSet)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
 
