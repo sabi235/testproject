@@ -18,10 +18,15 @@ from django.urls import path, include
 from rest_framework import routers
 from quickstart import views
 from movie.views import MovieViewSet
+from review.views import ReviewViewSet
+from comment.views import CommentViewSet
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
+
+#nested serializers
+router.register(r'comments', CommentViewSet)
 
 # serializers types
 router.register(r'basic', views.UserBasicViewSet)
@@ -29,6 +34,7 @@ router.register(r'model', views.UserModelViewSet)
 router.register(r'hyperlinked', views.UserHyperlinkedViewSet)
 
 router.register(r'movies', MovieViewSet)
+router.register(r'reviews', ReviewViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -36,5 +42,5 @@ urlpatterns = [
     # Wire up our API using automatic URL routing.
     # Additionally, we include login URLs for the browsable API.
     path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
